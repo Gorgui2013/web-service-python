@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+  header{
+    text-align: center;
+    position: relative;
+    padding: 10px;
+  }
+  .header1{
+    background-color: lightblue;
+    height: 60px;
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-radius: 10px;
+    box-shadow: 3px 3px lightgrey;
+  }
+  .header2{
+
+  }
+  label, select, button{
+    display: inline-block;
+  }
+
+  label{
+    font-size: 20px;
+    font-family: serif;
+  }
+
+  select{
+    height: 25px;
+    border: 1px solid lightblue;
+    border-radius: 3px;
+  }
+
+  button{
+    height: 30px;
+    border-radius: 5px;
+    border : 2px solid lightgrey;
+    background-color: rgb(111, 111, 111);
+    box-shadow: 2px 2px grey;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    font-family: bold;
+  }
+
+  button:hover{
+    background-color: rgb(141, 141, 141);
+  }
+
+  table{
+    border: 1px solid black;
+    width: 100%;
+  }
+  table thead{
+    background-color: lightgrey;
+    font-size: 20px;
+  }
+  thead tr th{
+    height: 30px;
+  }
+  tr:hover{
+    background-color: lightgrey;
+  }
+  td{
+    text-align: left;
+    padding: 10px;
+    border : 1px solid lightgrey;
+  }
+  header{
+    text-align: center;
+  }
+  img{
+    width: 50px;
+    border : 1px solid black;
+  }
+  hr{
+    margin: 15px;
+  }
+  </style>
+</head>
+<body>
+  {% block content %}
+
+  {% endblock %}
+
+</body>
+</html>

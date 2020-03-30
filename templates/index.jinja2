@@ -1,0 +1,81 @@
+{% extends 'base.jinja2' %}
+
+
+{% block content %}
+
+<header class="header1">
+
+<form method="post" action="/">
+  <label>Selectionner un pays : </label>
+  <select name="pay">
+    {% for pay in fullInfos %}
+    <option value="{{ pay['sName'] }}">{{pay['sName']}}</option>
+    {% endfor %}
+  </select>
+  <button type="submit">Afficher les informations</button>
+</form>
+
+</header>
+
+<hr>
+
+{% if(infos) %}
+  <table>
+    <header class="header">
+      <h1> {{ infos['sName'] }} <img src="{{infos['sCountryFlag']}}"></h1>
+    </header>
+
+    <thead>
+      <tr>
+        <th>Code ISO</th>
+        <th>Capital</th>
+        <th>Indicateur</th>
+        <th>Code continents</th>
+        <th>Devise</th>
+        <th>Languages parlés</th>
+      </tr>
+    </thead>
+    <tr>
+      <td>{{infos['sISOCode']}}</td>
+      <td>{{infos['sCapitalCity']}}</td>
+      <td>{{infos['sPhoneCode']}}</td>
+      <td>{{infos['sContinentCode']}}</td>
+      <td>{{infos['sCurrencyISOCode']}}</td>
+      <td>
+      {% for lang in langs['tLanguage'] %}
+        <p>{{lang['sISOCode']}} - {{lang['sName']}}</p>
+        {% endfor %}
+      </td>
+    </tr>
+  </table>
+
+  <hr>
+
+  {% endif %}
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Code ISO</th>
+        <th>Pays</th>
+        <th>Capital</th>
+        <th>Indicateur</th>
+        <th>Code continents</th>
+        <th>Devise</th>
+      </tr>
+    </thead>
+    {% for infopays in fullInfos %}
+      <tr>
+        <td>{{infopays['sISOCode']}}</td>
+        <td>{{infopays['sName']}}</td>
+        <td>{{infopays['sCapitalCity']}}</td>
+        <td>{{infopays['sPhoneCode']}}</td>
+        <td>{{infopays['sContinentCode']}}</td>
+        <td>{{infopays['sCurrencyISOCode']}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+
+{% endblock %}
